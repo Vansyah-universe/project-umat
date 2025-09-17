@@ -98,6 +98,7 @@
                             <option value="kepsek">Kepala Sekolah</option>
                             <option value="wakepsek">Wakil Kepala Sekolah</option>
                             <option value="bendahara">Bendahara</option>
+                            <option value="walikelas">Wali Kelas</option>
                             <option value="staff">Staff</option>
                         </select>
                     </div>
@@ -150,10 +151,11 @@
                     <div class="form-group  mt-2 mb-2">
                         <label for="jabatanguruEdit">Jabatan</label>
                         <select class="form-control form-control-sm form-add-guru" id="jabatanguruEdit">
-                            <option value="">_pilih_</option>
+                            <option value="">_pili h_</option>
                             <option value="guru">Guru</option>
                             <option value="kepsek">Kepala Sekolah</option>
                             <option value="wakepsek">Wakil Kepala Sekolah</option>
+                            <option value="walikelas">Wali Kelas</option>
                             <option value="bendahara">Bendahara</option>
                             <option value="staff">Staff</option>
                         </select>
@@ -357,14 +359,14 @@
                     setDataGuru += `
                     <tr>
                         <td data-id="${val.id_guru}">${num++}</td>
-                        <td data-noguru="${val.no_guru}">${val.no_guru}</td>
+                        <td data-noguru="${val.no_guru}" class="text-center">${val.no_guru}</td>
                         <td data-nama="${val.nama_guru}">${val.nama_guru}</td>
-                        <td data-nuptk="${val.nuptk}">${val.nuptk}</td>
+                        <td data-nuptk="${val.nuptk}" class="text-center">${(val.nuptk == '' ? '-' : val.nuptk)}</td>
                         <td data-alamat="${val.alamat_guru}">${val.alamat_guru}</td>
                         <td data-tlp="${val.tlp_guru}">${val.tlp_guru}</td>
                         <td data-email="${val.email_guru}">${val.email_guru}</td>
-                        <td>${val.mapel_guru}</td>
-                        <td data-jabatan="${val.jabatan}">${val.jabatan}</td>
+                        <td>${(val.mapel_guru == '' ? '-' : val.mapel_guru)}</td>
+                        <td data-jabatan="${val.jabatan}" class="text-center">${val.jabatan}</td>
                     </tr>`;
                 });
                 $('.put-data-guru').html(setDataGuru);
